@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mail_templates",
+  "info": {
+    "singularName": "mail-template",
+    "pluralName": "mail-templates",
+    "displayName": "MailTemplate"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "to": {
+      "type": "string"
+    },
+    "body": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "cases": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::case.case",
+      "inversedBy": "mail_templates"
+    }
+  }
+}

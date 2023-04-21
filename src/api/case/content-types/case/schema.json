@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cases",
+  "info": {
+    "singularName": "case",
+    "pluralName": "cases",
+    "displayName": "Case"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "media": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "contents": {
+      "type": "richtext"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "draft",
+        "completed"
+      ]
+    },
+    "mail_templates": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::mail-template.mail-template",
+      "mappedBy": "cases"
+    }
+  }
+}
